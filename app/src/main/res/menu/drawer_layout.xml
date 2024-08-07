@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item android:title="Note"/>
+
+    <item android:icon="@drawable/baseline_delete_outline_24"
+        android:title="Trash"
+        android:id="@+id/drawerDelete"/>
+
+    <item android:id="@+id/drawerTheme"
+        android:icon="@drawable/baseline_dark_mode_24"
+        android:title="Dark Mode"/>
+
+</menu>
