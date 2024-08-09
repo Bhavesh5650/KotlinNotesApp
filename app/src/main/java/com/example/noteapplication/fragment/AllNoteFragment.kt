@@ -5,13 +5,12 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import com.example.noteapplication.R
 import com.example.noteapplication.adapter.NoteAdapter
 import com.example.noteapplication.databinding.FragmentAllNoteBinding
 import com.example.noteapplication.helper.DBHelper
 import com.example.noteapplication.model.NoteModel
 
-class AllNoteFragment : Fragment() {
+class AllNoteFragment(var priority:Int) : Fragment() {
 
     private var noteList = mutableListOf<NoteModel>()
     private lateinit var adapter1:NoteAdapter
@@ -22,7 +21,7 @@ class AllNoteFragment : Fragment() {
     ): View? {
         val binding = FragmentAllNoteBinding.inflate(layoutInflater)
 
-        adapter1 = NoteAdapter(noteList)
+        adapter1 = NoteAdapter(this@AllNoteFragment,noteList)
         binding.noteRecycleView.adapter = adapter1
 
         return binding.root
@@ -30,9 +29,17 @@ class AllNoteFragment : Fragment() {
 
     override fun onResume() {
         val dbHelper = DBHelper(activity)
-        noteList = dbHelper.read()
+        if(priority==-1)
+        {
+            noteList = dbHelper.read()
+        }
+        else
+        {
+            noteList = dbHelper.readPriority(priority)
+        }
         adapter1.changeData(noteList)
         super.onResume()
     }
+
 
 }

@@ -1,7 +1,7 @@
 <resources>
-    <color name="medium_amber">#80FFBF00</color>
+    <color name="medium_amber">#00ACC1</color>
     <color name="high_red">#80FF0000</color>
-    <color name="urgent_orange">#80FFA500</color>
+    <color name="urgent_orange">#CCFFA500</color>
     <color name="normal_gray">#80808080</color>
 
     <color name="md_theme_primary">#815512</color>
