@@ -6,6 +6,7 @@ import android.content.Context
 import android.content.Intent
 import android.icu.util.Calendar
 import android.icu.util.LocaleData
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -68,6 +69,8 @@ class NoteAdapter(var context: AllNoteFragment, private var noteList: MutableLis
             holder.binding.setBackground.setCardBackgroundColor(holder.itemView.context.getColor(R.color.normal_gray))
         }
         holder.binding.setBackground.setOnClickListener {
+
+            Log.e("TAG", "onBindViewHolder: ------------------------- ${noteList[position].priority}", )
             val intent = Intent(holder.itemView.context,EnterNoteActivity::class.java)
             intent.putExtra("intentTitle",noteList[position].title)
             intent.putExtra("intentDes",noteList[position].des)

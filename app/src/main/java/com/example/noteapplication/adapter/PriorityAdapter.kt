@@ -13,12 +13,12 @@ class PriorityAdapter(fragmentActivity: FragmentActivity) : FragmentStateAdapter
     override fun createFragment(position: Int): Fragment {
         return when(position)
         {
-            0->AllNoteFragment(-1)
-            1->AllNoteFragment(1)
-            2->AllNoteFragment(2)
-            3->AllNoteFragment(3)
-            4->AllNoteFragment(4)
-            else->AllNoteFragment(-1)
+            0->AllNoteFragment()
+            1->AllNoteFragment()
+            2->AllNoteFragment()
+            3->AllNoteFragment()
+            4->AllNoteFragment()
+            else->AllNoteFragment()
         }
     }
 }

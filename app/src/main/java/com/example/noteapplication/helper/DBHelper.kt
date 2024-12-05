@@ -113,6 +113,13 @@ class DBHelper(context: Context?) : SQLiteOpenHelper(context, "MyDataBase.db", n
         return noteList
     }
 
+    fun trashDelete(id:Int)
+    {
+        val db = writableDatabase
+        val tQuery4 = "DELETE FROM Trash WHERE id='$id'"
+        db.execSQL(tQuery4)
+    }
+
     fun trashUpdate(model: NoteModel)
     {
         val db = writableDatabase
@@ -120,11 +127,5 @@ class DBHelper(context: Context?) : SQLiteOpenHelper(context, "MyDataBase.db", n
         db.execSQL(tQuery3)
     }
 
-    fun trashDelete(id:Int)
-    {
-        val db = writableDatabase
-        val tQuery4 = "DELETE FROM Trash WHERE id='$id'"
-        db.execSQL(tQuery4)
-    }
 
 }
